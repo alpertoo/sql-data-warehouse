@@ -1,3 +1,14 @@
+/*
+Stored Procedure: Load Silver Layer
+
+Purpose: This stored procedure loads data into the 'silver' schema from external files.
+Truncates the silver tables before loading data.
+Uses the 'BULK INSERT' command to load data from files to silver tables.
+
+Usage example:
+  EXEC silver.load_bronze;
+*/
+
 CREATE OR ALTER PROCEDURE silver.load_silver AS
 BEGIN
 	DECLARE @start_time DATETIME, @end_time DATETIME, @batch_start_time DATETIME, @batch_end_time DATETIME;

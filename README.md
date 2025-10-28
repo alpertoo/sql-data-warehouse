@@ -1,6 +1,6 @@
 # SQL Data Warehouse Project
 
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating insights. 
+This project demonstrates a full-life-cycle data warehousing solution using Microsoft SQL Server, covering the steps from raw data ingestion through to analytics-ready fact and dimension tables. The data sources used are CSV extracts from ERP and CRM systems.
 
 ---
 
@@ -11,9 +11,9 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 
 #### Specifications
 - **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
+- **Data Quality**: Clean and resolve data quality issues before analysis.
 - **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
+- **Scope**: Focus on the latest dataset only; historisation of data is not required.
 - **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
 
 ---
@@ -25,11 +25,20 @@ This project involves:
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
 4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
 
-
 ---
-## Project Requirements
+## Architecture & Data Flow
 
-### Building the Data Warehouse (Data Engineering)
+The architecture follows a **“medallion”** or layered approach with three primary zones:
+**Bronze**: Raw ingestion of CSV files (ERP & CRM).
+**Silver**: Cleaned and transformed staging data.
+**Gold**: Final fact and dimension tables ready for analytics.
+
+### Flow summary:
+- Extract CSV files from source systems.
+- Load into Bronze layer tables via ETL scripts.
+- Clean, deduplicate and transform data in Silver layer.
+- Model and load fact and dimension tables in Gold layer.
+- Run SQL-based analytics queries/reports on the Gold layer.
 
 ---
 
@@ -65,3 +74,9 @@ data-warehouse-project/
 └── LICENSE                             # License information for the repository
 ```
 ---
+## Future Enhancements
+Introduce historisation (i.e., slowly changing dimensions) to allow full history tracking rather than only “latest dataset”.
+Automate ETL orchestration (e.g., with a scheduler or workflow tool).
+Expand to cloud or hybrid architecture (e.g., Azure SQL Data Warehouse or AWS Redshift).
+Add interactive dashboards (e.g., Power BI / Tableau) for richer visual analytics.
+Implement more advanced analytics (e.g., predictive modelling, customer churn, basket analysis).

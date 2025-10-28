@@ -26,7 +26,7 @@ This project involves:
 4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
 
 ---
-## Architecture & Data Flow
+## Architecture & Data Flow
 
 The architecture follows a **“medallion”** or layered approach with three primary zones:
 **Bronze**: Raw ingestion of CSV files (ERP & CRM).
@@ -75,8 +75,8 @@ data-warehouse-project/
 ```
 ---
 ## Future Enhancements
-Introduce historisation (i.e., slowly changing dimensions) to allow full history tracking rather than only “latest dataset”.
-Automate ETL orchestration (e.g., with a scheduler or workflow tool).
-Expand to cloud or hybrid architecture (e.g., Azure SQL Data Warehouse or AWS Redshift).
-Add interactive dashboards (e.g., Power BI / Tableau) for richer visual analytics.
-Implement more advanced analytics (e.g., predictive modelling, customer churn, basket analysis).
+- Introduce historisation (i.e., slowly changing dimensions) to allow full history tracking rather than only “latest dataset”.
+- Automate ETL orchestration (e.g., with a scheduler or workflow tool).
+- Expand to cloud or hybrid architecture (e.g., Azure SQL Data Warehouse or AWS Redshift).
+- Add interactive dashboards (e.g., Power BI / Tableau) for richer visual analytics.
+- Implement more advanced analytics (e.g., predictive modelling, customer churn, basket analysis).
